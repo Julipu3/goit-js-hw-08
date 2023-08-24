@@ -30,6 +30,12 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
   e.preventDefault();
+
+  if (currentData.email.trim() === '' || currentData.message.trim() === '') {
+    alert('Будь ласка, заповніть всі поля форми.');
+    return;
+  }
+
   console.log(currentData);
   localStorage.removeItem(keyStorage);
   form.reset();
